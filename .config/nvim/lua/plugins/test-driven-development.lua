@@ -17,6 +17,16 @@ return {
             target = "/test/%1/%2_test.exs",
             context = "test",
           },
+          {
+            pattern = "/lib/(.*)/(.*)_live%.ex$",
+            target = "/lib/%1/%2_live.html.heex",
+            context = "template"
+          },
+          {
+            pattern = "/lib/(.*)/(.*)_live%.html%.heex$",
+            target = "/lib/%1/%2_live.ex",
+            context = "liveview"
+          }
 				},
 				transformers = {
 					lowercase = function(inputString)
