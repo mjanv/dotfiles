@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+
 [user]
 	email = maxime.janvier@gmail.com
 	name = Maxime Janvier
@@ -8,4 +9,12 @@
 	insteadOf = https://github.com/
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+[rebase]
+  updateRefs = true
+	autosquash = true
+
+[alias]
+  c = checkout
+  oops = commit --amend --no-edit
