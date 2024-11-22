@@ -121,8 +121,7 @@ fi
 . "$HOME/.asdf/completions/asdf.bash"
 
 # Python
-PATH=$(echo $PATH | sed -e 's/:\/home\/mjanvier\/anaconda3\/bin//g')
-# export PATH=/home/mjanvier/anaconda3/bin:$PATH
+export PATH=$HOME/anaconda3/bin:$PATH
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
@@ -131,20 +130,20 @@ export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"
 
 # Haskell
-[ -f "/home/mjanvier/.ghcup/env" ] && source "/home/mjanvier/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # Pulimi
 export PATH=$PATH:$HOME/.pulumi/bin
 
 # Javascript
-export DENO_INSTALL="/home/mjanvier/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 # Fly.io
-export FLYCTL_INSTALL="/home/mjanvier/.fly"
+export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Neovim
