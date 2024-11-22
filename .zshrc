@@ -102,37 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# asdf
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
 
-# Python
-PATH=$(echo $PATH | sed -e 's/:\/home\/mjanvier\/anaconda3\/bin//g')
-# export PATH=/home/mjanvier/anaconda3/bin:$PATH
-
-# Go
-export PATH=$PATH:/usr/local/go/bin
-
-# Rust
-. "$HOME/.cargo/env"
-
-# Haskell
-[ -f "/home/mjanvier/.ghcup/env" ] && source "/home/mjanvier/.ghcup/env" # ghcup-env
-
-# Pulimi
-export PATH=$PATH:$HOME/.pulumi/bin
-
-# Javascript
-export DENO_INSTALL="/home/mjanvier/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
-# Fly.io
-export FLYCTL_INSTALL="/home/mjanvier/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
-# Neovim
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
+if [ -f ~/.paths ]; then
+    . ~/.paths
+fi
