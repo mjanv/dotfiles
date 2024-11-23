@@ -1,14 +1,14 @@
 [core]
-	editor = vim
+  editor = vim
   pager = cat
   excludesfile = ~/.config/git/ignore
 
 [user]
-	email = maxime.janvier@gmail.com
-	name = Maxime Janvier
+  email = maxime.janvier@gmail.com
+  name = Maxime Janvier
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 
 [init]
   defaultBranch = main
