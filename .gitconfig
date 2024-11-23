@@ -16,5 +16,23 @@
 	autosquash = true
 
 [alias]
+  # LOGS
+  # [l]og [g]raph
+  # [l]og [a]bbreviated
+  lg = log --graph --decorate --all --format=format:'%C(bold blue)%h%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  la = lg --abbrev-commit --oneline
+
+  # STATUS
+  # [s]tatus
+  s = status
+
   c = checkout
   oops = commit --amend --no-edit
+
+  co = commit
+  coa = commit -a
+  com = commit -m
+  coam = commit -am
+
+  find = log --pretty=\"format:%Cgreen%H\n%s\n\n%b\" --name-status --grep
+  prune = "checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
