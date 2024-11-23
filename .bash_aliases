@@ -34,3 +34,7 @@ alias dc='docker-compose'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias dcdv='docker-compose down --volumes'
+
+function dport() {
+	kill -9 $(lsof -t -i:$1)
+}
