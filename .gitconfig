@@ -1,6 +1,7 @@
 [core]
 	editor = vim
   pager = cat
+  excludesfile = ~/.config/git/ignore
 
 [user]
 	email = maxime.janvier@gmail.com
@@ -12,9 +13,29 @@
 [init]
   defaultBranch = main
 
+[merge]
+  ff = false
+
 [rebase]
   updateRefs = true
-	autosquash = true
+  autosquash = true
+
+[log]
+  abbrevCommit = true
+
+[diff]
+  algorithm = histogram
+
+[tag]
+  sort = version:refname
+
+[versionsort]
+  prereleaseSuffix = -pre
+  prereleaseSuffix = .pre
+  prereleaseSuffix = -beta
+  prereleaseSuffix = .beta
+  prereleaseSuffix = -rc
+  prereleaseSuffix = .rc
 
 [alias]
   # LOGS
