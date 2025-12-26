@@ -1,0 +1,34 @@
+{
+    "Matplotlib": {
+        "prefix": ["matplotlib"],
+        "body": ["import matplotlib.pyplot as plt"],
+        "description": "Matplotlib imports"
+    },
+    "Scientific python": {
+        "prefix": ["numpy"],
+        "body": ["import numpy as np", "import pandas as pd",
+                 "", "import matplotlib.pyplot as plt"],
+        "description": "Scientific python imports"
+    },
+    "exit": {
+        "prefix": ["exit"],
+        "body": ["import sys; sys.exit()"],
+        "description": "exit program using sys.exit()"
+    },
+    "Identity dict": {
+        "prefix": ["kv"],
+        "body": ["$0 = {k: v for k, v in $0.items()}"]
+    },
+    "Merge dicts": {
+        "prefix": ["merge"],
+        "body": ["$1 = {**$2, **$3}"]
+    },
+    "DotEnv": {
+        "prefix": ["dotenv"],
+        "body": ["import os", "from dotenv import load_dotenv", "", "load_dotenv()"]
+    }
+    "Dataclasses" : {
+        "prefix": ["dataclass"],
+        "body": ["from dataclasses import dataclass"]
+    }
+}
