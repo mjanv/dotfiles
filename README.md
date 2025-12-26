@@ -8,7 +8,9 @@
 - [Git](git/)
 - [Bash](bash/)
 - [Zsh](zsh/)
+- [Claude Code](claude/)
 - [VS Code](code/)
+- [Obsidian](obsidian/README.md)
 
 ## Installation
 
