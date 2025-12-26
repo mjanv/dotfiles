@@ -1,19 +1,40 @@
 [core]
-	editor = vim
+  editor = vim
+  pager = cat
 
 [user]
-	email = maxime.janvier@gmail.com
-	name = Maxime Janvier
+  email = maxime.janvier@gmail.com
+  name = Maxime Janvier
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 
 [init]
   defaultBranch = main
 
+[merge]
+  ff = false
+
 [rebase]
   updateRefs = true
-	autosquash = true
+  autosquash = true
+
+[log]
+  abbrevCommit = true
+
+[diff]
+  algorithm = histogram
+
+[tag]
+  sort = version:refname
+
+[versionsort]
+  prereleaseSuffix = -pre
+  prereleaseSuffix = .pre
+  prereleaseSuffix = -beta
+  prereleaseSuffix = .beta
+  prereleaseSuffix = -rc
+  prereleaseSuffix = .rc
 
 [alias]
   # LOGS

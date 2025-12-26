@@ -106,3 +106,4 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.paths ]; then
     . ~/.paths
 fi
+. "$HOME/snap/code/current/.local/share/../bin/env"

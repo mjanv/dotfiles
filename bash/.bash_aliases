@@ -1,8 +1,11 @@
 # Programs
 alias j='just'
+
 alias g='gedit'
 alias c='code .'
 alias n='nvim'
+
+alias cc='claude'
 
 function tldr() {
 	curl "cheat.sh/$1"

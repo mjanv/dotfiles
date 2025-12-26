@@ -116,8 +116,41 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f ~/.paths ]; then
-    . ~/.paths
-fi
+# asdf
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
 
+# Python
+export PATH=$HOME/anaconda3/bin:$PATH
 
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+# Rust
+. "$HOME/.cargo/env"
+
+# Haskell
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+# Pulimi
+export PATH=$PATH:$HOME/.pulumi/bin
+
+# Javascript
+export DENO_INSTALL="/home/mjanvier/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# Fly.io
+export FLYCTL_INSTALL="/home/mjanvier/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Neovim
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# VS Code
+. "$HOME/snap/code/current/.local/share/../bin/env"
