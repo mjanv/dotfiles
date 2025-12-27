@@ -1,6 +1,6 @@
 # Dotfiles
 
-> Maxime Janvier personal configuration
+> Maxime Janvier personal dotfiles configuration
 
 ## Packages
 
