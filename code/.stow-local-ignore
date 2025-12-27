@@ -1,17 +1,25 @@
-# Default ignores (required - .stow-local-ignore replaces defaults)
+# Default ignores
 RCS
 .+,v
+
 CVS
-\.\#.+
+\.\#.+       # CVS conflict files / emacs lock files
 \.cvsignore
+
 \.svn
 _darcs
 \.hg
+
 \.git
 \.gitignore
 \.gitmodules
-\.bzr
-\.bzrignore
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
 
 # Custom ignores
 extensions\.txt
