@@ -1,6 +1,7 @@
 [core]
   editor = vim
   pager = cat
+  excludesfile = ~/.gitignore_global
 
 [user]
   email = maxime.janvier@gmail.com
@@ -24,6 +25,29 @@
 
 [diff]
   algorithm = histogram
+  colorMoved = default
+  colorMovedWS = allow-indentation-change
+  mnemonicPrefix = true
+
+[push]
+  default = current
+  autoSetupRemote = true
+  followTags = true
+
+[pull]
+  rebase = true
+  ff = only
+
+[fetch]
+  prune = true
+  pruneRags = true
+
+[rerere]
+  enabled = true
+  autoUpdate = true
+
+[branch]
+  sort = -committerdate
 
 [tag]
   sort = version:refname
@@ -47,13 +71,34 @@
   # [s]tatus
   s = status
 
+  # CHECKOUT
+  # [c]heckout
   c = checkout
-  oops = commit --amend --no-edit
 
+  # COMMIT AMENDMENTS
+  # Fix last commit without editing message
+  oops = commit --amend --no-edit
+  # Undo last commit but keep changes
+  undo = reset HEAD~1 --mixed
+
+  # COMMIT SHORTCUTS
+  # [co]mmit
   co = commit
+  # [co]mmit [a]ll tracked files
   coa = commit -a
+  # [co]mmit with [m]essage
   com = commit -m
+  # [co]mmit [a]ll with [m]essage
   coam = commit -am
 
+  # PUSH
+  # Force [p]ush with lease (safer than --force)
+  p = push --force-with-lease
+
+  # SEARCH
+  # Search commit messages and display affected files
   find = log --pretty=\"format:%Cgreen%H\n%s\n\n%b\" --name-status --grep
+
+  # CLEANUP
+  # Delete all branches merged into master (excluding current branch)
   prune = "checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
