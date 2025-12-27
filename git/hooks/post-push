@@ -1,0 +1,6 @@
+#!/bin/sh
+
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+commit=$(git rev-parse --short HEAD)
+
+echo "🚀 Push complete → $branch ($commit)"
