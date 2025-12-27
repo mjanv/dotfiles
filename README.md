@@ -4,21 +4,37 @@
 
 ## Packages
 
-- [Neovim](nvim/)
-- [Git](git/)
+### Terminals
+
 - [Bash](bash/)
 - [Zsh](zsh/)
-- [Claude Code](claude/)
+- [Git](git/)
+
+### Text editors
+
+- [Vim](vim/)
+- [Neovim](nvim/)
 - [VS Code](code/)
 - [Obsidian](obsidian/README.md)
+
+### AI assistants
+
+- [Claude Code](claude/)
+
 
 ## Installation
 
 ```bash
 sudo apt install stow
-stow <package>
+./stow.sh all     # Install all packages (bash, zsh, git, vim, nvim, code, claude)
+./stow.sh bash    # Install specific package(s)
 ```
 
-Read stow documentation: [Manage Your Dotfiles Like a Superhero - Jake Wiesler](https://www.jakewiesler.com/blog/managing-dotfiles)
+**Obsidian** requires manual stowing with vault-specific target directories. See [obsidian/README.md](obsidian/README.md) for details.
 
 To install Firacode font and Nerd icons, install the font from [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+
+## Resources
+
+- [GNU Stow manual](https://www.gnu.org/software/stow/manual/stow.html)
+- [Manage Your Dotfiles Like a Superhero - Jake Wiesler](https://www.jakewiesler.com/blog/managing-dotfiles)
