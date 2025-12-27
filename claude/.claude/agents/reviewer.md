@@ -1,6 +1,6 @@
 ---
-name: code-review
-description: Reviews current git diff for code quality, security, and best practices. Outputs a structured report.
+name: reviewer
+description: Reviews current git diff for code quality, security, and best practices.
 tools: Read, Grep, Glob, Bash(git diff:*)
 model: haiku
 ---
