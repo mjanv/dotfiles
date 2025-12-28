@@ -116,9 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # asdf
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+. <(asdf completion bash)
 
 # Python
 export PATH=$HOME/anaconda3/bin:$PATH
@@ -138,7 +140,6 @@ export PATH=$PATH:$HOME/.pulumi/bin
 # Javascript
 export DENO_INSTALL="/home/mjanvier/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
@@ -148,9 +149,8 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 # Neovim
 export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# VS Code
-. "$HOME/snap/code/current/.local/share/../bin/env"
