@@ -4,6 +4,8 @@ disallowed-tools: Bash(git add:*)
 description: Create a git commit
 ---
 
+# Commit
+
 ## Context
 
 - Current git status: !`git status`
