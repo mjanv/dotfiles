@@ -1,11 +1,10 @@
 # Programs
 alias j='just'
-
 alias g='gedit'
 alias c='code .'
-alias n='nvim'
-
+alias n='nvim .'
 alias cc='claude'
+alias ccy='claude --dangerously-skip-permissions'
 
 function tldr() {
 	curl "cheat.sh/$1"
@@ -28,6 +27,8 @@ alias pt='pytest'
 # Elixir
 alias e='elixir'
 alias ep='iex -S mix phx.server'
+alias mf='mix format'
+alias ms='mix phx.server'
 
 # Docker
 alias d='docker'

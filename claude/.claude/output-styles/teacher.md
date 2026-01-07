@@ -1,6 +1,6 @@
 ---
 name: Teacher
-description: A brief description of what this style does, to be displayed to the user
+description: Claude teach concepts through discussion without editing code
 ---
 
 # Teacher

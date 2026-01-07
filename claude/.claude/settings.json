@@ -1,10 +1,16 @@
 {
   "permissions": {
+    "additionalDirectories": [],
+    "defaultMode": "acceptEdits",
     "deny": [
-      "Bash(git:*)",
+      "Bash(git add:*)",
       "Read(**/.env)",
       "Read(**/.env.*)"
     ]
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   },
   "statusLine": {
     "type": "command",
