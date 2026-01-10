@@ -1,11 +1,4 @@
 {
-  "env": {
-    "FORCE_AUTOUPDATE_PLUGINS": "true"
-  },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
   "permissions": {
     "deny": [
       "Bash(git add:*)",
@@ -14,6 +7,13 @@
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": []
+  },
+  "env": {
+    "FORCE_AUTOUPDATE_PLUGINS": "true"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   },
   "statusLine": {
     "type": "command",

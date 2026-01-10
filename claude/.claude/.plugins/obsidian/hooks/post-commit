@@ -1,0 +1,83 @@
+#!/bin/bash
+# Post-commit hook for Obsidian integration
+# Logs git commits to today's daily note
+#
+# Installation:
+# 1. Make executable: chmod +x post-commit
+# 2. Symlink to .git/hooks/: ln -s ~/.dotfiles/claude/.claude/.plugins/obsidian/hooks/post-commit .git/hooks/post-commit
+# 3. Or use git config: git config core.hooksPath ~/.dotfiles/claude/.claude/.plugins/obsidian/hooks
+
+# Configuration - edit these paths as needed
+VAULT_PATH="${OBSIDIAN_VAULT:-$HOME/NOTES}"
+DAILY_NOTES_PATH="${OBSIDIAN_DAILY:-Daily}"
+
+# Get commit information
+COMMIT_HASH=$(git rev-parse --short HEAD)
+COMMIT_MSG=$(git log -1 --pretty=%B)
+COMMIT_DATE=$(date +%Y-%m-%d)
+COMMIT_TIME=$(date +%H:%M)
+
+# Get repository name
+REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
+
+# Construct daily note path
+DAILY_NOTE="$VAULT_PATH/$DAILY_NOTES_PATH/$COMMIT_DATE.md"
+
+# Function to create daily note if it doesn't exist
+create_daily_note() {
+    mkdir -p "$(dirname "$DAILY_NOTE")"
+    cat > "$DAILY_NOTE" <<EOF
+---
+date: $COMMIT_DATE
+tags: [daily]
+---
+
+# $COMMIT_DATE
+
+## Tasks
+
+## Events
+
+## Notes
+
+## Commits
+EOF
+}
+
+# Function to append commit to daily note
+log_commit() {
+    # Check if daily note exists, create if not
+    if [ ! -f "$DAILY_NOTE" ]; then
+        create_daily_note
+    fi
+
+    # Check if Commits section exists
+    if ! grep -q "^## Commits" "$DAILY_NOTE"; then
+        # Add Commits section at the end
+        echo -e "\n## Commits" >> "$DAILY_NOTE"
+    fi
+
+    # Append commit entry
+    # Format: - HH:MM [repo] `hash` commit message
+    COMMIT_ENTRY="- $COMMIT_TIME [$REPO_NAME] \`$COMMIT_HASH\` $COMMIT_MSG"
+
+    # Check if entry already exists (avoid duplicates)
+    if ! grep -qF "$COMMIT_ENTRY" "$DAILY_NOTE"; then
+        # Insert after ## Commits header
+        awk -v entry="$COMMIT_ENTRY" '
+            /^## Commits/ { print; print entry; found=1; next }
+            { print }
+        ' "$DAILY_NOTE" > "$DAILY_NOTE.tmp" && mv "$DAILY_NOTE.tmp" "$DAILY_NOTE"
+    fi
+}
+
+# Only log if vault exists
+if [ -d "$VAULT_PATH" ]; then
+    log_commit
+    echo "📝 Logged commit to $DAILY_NOTE"
+else
+    echo "⚠️  Obsidian vault not found at $VAULT_PATH"
+    echo "   Set OBSIDIAN_VAULT environment variable or edit hook configuration"
+fi
+
+exit 0

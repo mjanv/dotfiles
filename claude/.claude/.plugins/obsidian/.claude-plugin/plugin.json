@@ -1,7 +1,7 @@
 {
     "name": "obsidian",
-    "description": "...",
-    "version": "0.0.1",
+    "description": "Integration with Obsidian for note management, daily notes, and knowledge retrieval",
+    "version": "0.1.0",
     "author": {
         "name": "Maxime Janvier"
     }
