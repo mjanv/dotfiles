@@ -1,0 +1,13 @@
+{
+  "name": "my-plugins",
+  "owner": {
+    "name": "Maxime Janvier"
+  },
+  "plugins": [
+    {
+      "name": "obsidian",
+      "source": "./obsidian",
+      "description": "..."
+    }
+  ]
+}

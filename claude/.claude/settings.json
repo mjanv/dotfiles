@@ -1,16 +1,19 @@
 {
-  "permissions": {
-    "additionalDirectories": [],
-    "defaultMode": "acceptEdits",
-    "deny": [
-      "Bash(git add:*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)"
-    ]
+  "env": {
+    "FORCE_AUTOUPDATE_PLUGINS": "true"
   },
   "attribution": {
     "commit": "",
     "pr": ""
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git add:*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)"
+    ],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": []
   },
   "statusLine": {
     "type": "command",
@@ -21,9 +24,16 @@
     "frontend-design@claude-code-plugins": true,
     "ralph-wiggum@claude-plugins-official": true,
     "github@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
+    "playwright@claude-plugins-official": true,
+    "obsidian@my-plugins": true
   },
   "extraKnownMarketplaces": {
+    "my-plugins": {
+      "source": {
+        "source": "directory",
+        "path": "~/.claude/.marketplace"
+      }
+    },
     "claude-code-plugins": {
       "source": {
         "source": "github",
