@@ -1,0 +1,26 @@
+# Machine-Specific Git Configuration
+# Copy this file to ~/.gitconfig.local and customize with your personal settings
+
+[user]
+  name = Your Name
+  email = your.email@example.com
+  # Optional: GPG signing key
+  # signingkey = YOUR_GPG_KEY_ID
+
+# Optional: Enable commit signing
+# [commit]
+#   gpgsign = true
+
+# Optional: Enable tag signing
+# [tag]
+#   gpgsign = true
+
+# Optional: Machine-specific aliases
+# [alias]
+#   work = "!cd ~/work"
+
+# Optional: Conditional includes for work/personal repos
+# [includeIf "gitdir:~/work/"]
+#   path = ~/.gitconfig.work
+# [includeIf "gitdir:~/personal/"]
+#   path = ~/.gitconfig.personal

@@ -1,11 +1,10 @@
+[include]
+  path = ~/.gitconfig.local
+
 [core]
   editor = vim
   pager = cat
   excludesfile = ~/.gitignore_global
-
-[user]
-  email = maxime.janvier@gmail.com
-  name = Maxime Janvier
 
 [url "git@github.com:"]
   insteadOf = https://github.com/

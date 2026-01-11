@@ -20,3 +20,4 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+^/\.gitconfig\.local$  # Machine-specific config, not symlinked
