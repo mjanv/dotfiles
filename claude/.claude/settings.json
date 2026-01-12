@@ -19,6 +19,7 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "FORCE_AUTOUPDATE_PLUGINS": "true"
   },
+  "includeCoAuthoredBy": false,
   "attribution": {
     "commit": "",
     "pr": ""
