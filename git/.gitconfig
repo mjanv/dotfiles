@@ -90,7 +90,7 @@
   # [co]mmit [a]ll with [m]essage
   coam = commit -am
 
-  # FIXUP
+  # FIXUPS
   fix = "!f() { git commit --fixup=$1; }; f"
   fixup = "!git log -n 20 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   squash = "!f() { git rebase -i --autosquash $1; }; f"
