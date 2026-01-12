@@ -3,8 +3,20 @@ alias j='just'
 alias g='gedit'
 alias c='code .'
 alias n='nvim .'
-alias cc='claude'
-alias ccy='claude --dangerously-skip-permissions'
+
+# Claude Code
+claudia() {
+  source ~/.claude/.env && claude "$@"
+}
+
+alias cc='claudia'
+alias cch='claudia --model haiku'
+alias ccs='claudia --model sonnet'
+alias cco='claudia --model opus'
+alias ccy='claudia --dangerously-skip-permissions'
+alias cchy='claudia --model haiku --dangerously-skip-permissions'
+alias ccsy='claudia --model sonnet --dangerously-skip-permissions'
+alias ccoy='claudia --model opus --dangerously-skip-permissions'
 
 function tldr() {
 	curl "cheat.sh/$1"

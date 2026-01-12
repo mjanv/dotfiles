@@ -1,7 +1,7 @@
 ---
 description: Commit, push, and open a PR
 allowed-tools: Bash(git checkout --branch:*), Bash(git add:*), Bash(git status:*), Bash(git push:*), Bash(git commit:*), Bash(gh pr create:*)
-model: claude-haiku-4-5
+model: haiku
 ---
 
 # Pull Request

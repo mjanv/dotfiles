@@ -2,7 +2,7 @@
 allowed-tools: Bash(git status:*), Bash(git commit:*)
 disallowed-tools: Bash(git add:*)
 description: Create a git commit
-model: claude-haiku-4-5
+model: haiku
 ---
 
 # Commit
