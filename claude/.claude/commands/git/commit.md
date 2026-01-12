@@ -16,7 +16,7 @@ model: claude-haiku-4-5
 
 ## Your task
 
-Based on the above changes, create a single git commit from files in the staging area. Do NOT add or removed any new files to the staging area. Do NOT add a `Co-Authored-By` or "Generated with" . Display the message after committing it. Commit message should be under the template:
+Based on the above changes, create a single git commit from files in the staging area. Do NOT add or removed any new files to the staging area. Display the message after committing it. Commit message should be under the template:
 
 ```
 <title>

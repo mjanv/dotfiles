@@ -1,7 +1,14 @@
 {
   "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch"
+    ],
+    "ask": [],
     "deny": [
       "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git rebase:*)",
       "Read(**/.env)",
       "Read(**/.env.*)"
     ],
@@ -9,6 +16,7 @@
     "additionalDirectories": []
   },
   "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "FORCE_AUTOUPDATE_PLUGINS": "true"
   },
   "attribution": {

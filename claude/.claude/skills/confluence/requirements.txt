@@ -1,0 +1,9 @@
+# Confluence Skill Dependencies
+# Uses only standard library - no external dependencies required
+#
+# The confluence_client.py uses urllib which is part of Python standard library
+# Uses same credentials as Jira skill (JIRA_API_TOKEN, EMAIL)
+#
+# If you need additional features, you can optionally install:
+#
+# requests>=2.28.0  # Alternative HTTP client (not required)
