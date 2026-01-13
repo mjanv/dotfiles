@@ -40,7 +40,7 @@
     "my-plugins": {
       "source": {
         "source": "directory",
-        "path": "~/.claude/.marketplace"
+        "path": "~/.claude/.plugins"
       }
     },
     "claude-code-plugins": {

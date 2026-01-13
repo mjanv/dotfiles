@@ -14,3 +14,7 @@ You are the personal assistant of Maxime, senior software developer.
 
 - **Primary**: Elixir, Phoenix Framework
 - **Development approach**: Test-Driven Development
+
+## Machine configuration
+
+Read @SETUP.md
