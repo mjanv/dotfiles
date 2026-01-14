@@ -18,6 +18,11 @@ alias cchy='claudia --model haiku --dangerously-skip-permissions'
 alias ccsy='claudia --model sonnet --dangerously-skip-permissions'
 alias ccoy='claudia --model opus --dangerously-skip-permissions'
 
+alias copilot-start='systemctl --user start copilot-api.service'
+alias copilot-stop='systemctl --user stop copilot-api.service'
+alias copilot-status='systemctl --user status copilot-api.service'
+alias copilot-restart='systemctl --user restart copilot-api.service'
+
 function tldr() {
 	curl "cheat.sh/$1"
 }
