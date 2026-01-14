@@ -4,7 +4,7 @@
 [core]
   editor = vim
   pager = cat
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore.global
 
 [url "git@github.com:"]
   insteadOf = https://github.com/
@@ -73,12 +73,10 @@
   # CHECKOUT
   # [c]heckout
   c = checkout
-
-  # COMMIT AMENDMENTS
-  # Fix last commit without editing message
-  oops = commit --amend --no-edit
-  # Undo last commit but keep changes
-  undo = reset HEAD~1 --mixed
+  # [s]ync to the latest trunk branch
+  sync = "!git checkout master && git pull --rebase origin master"
+  # rebase a branch onto the latest trunk branch
+  up = "!f() { git checkout master && git pull --rebase origin master && git rebase master \"$1\" --onto master && git push --force origin \"$1\"; }; f"
 
   # COMMIT SHORTCUTS
   # [co]mmit
@@ -89,6 +87,14 @@
   com = commit -m
   # [co]mmit [a]ll with [m]essage
   coam = commit -am
+  # Fix last commit without editing message
+  oops = commit --amend --no-edit
+  # [w]ip commit
+  wip = !git add . && git commit -m "wip"
+  # [f]ix commit
+  fix = !git add . && git commit -m "fix"
+  # Undo last commit but keep changes
+  undo = reset HEAD~1 --mixed
 
   # FIXUPS
   fix = "!f() { git commit --fixup=$1; }; f"
@@ -98,6 +104,8 @@
   # PUSH
   # Force [p]ush with lease (safer than --force)
   p = push --force-with-lease
+  # Commit and push the current branch
+  rocket = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git add . && git commit && git push origin $branch; }; f"
 
   # SEARCH
   # Search commit messages and display affected files
