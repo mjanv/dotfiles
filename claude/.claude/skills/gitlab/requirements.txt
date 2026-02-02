@@ -1,8 +1,2 @@
 # GitLab Skill Dependencies
-# Uses only standard library - no external dependencies required
-#
-# The gitlab_client.py uses urllib which is part of Python standard library
-#
-# If you need additional features, you can optionally install:
-#
-# requests>=2.28.0  # Alternative HTTP client (not required)
+python-dotenv>=1.0.0  # For proper .env file parsing with export syntax support

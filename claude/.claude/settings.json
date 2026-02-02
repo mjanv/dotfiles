@@ -14,12 +14,10 @@
       "WebFetch"
     ],
     "deny": [
-      // Git
       "Bash(git rebase:*)",
       "Bash(git revert:*)",
       "Bash(git reset:*)",
       "Bash(git push:*)",
-      // Environment files
       "Read(**/.env)",
       "Read(**/.env.*)"
     ],

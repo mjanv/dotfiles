@@ -13,6 +13,7 @@ import ssl
 import base64
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
+from dotenv import load_dotenv
 
 
 @dataclass
@@ -57,18 +58,15 @@ class ConfluenceClient:
         return f"{self.config.base_url}{self.config.api_path_v1}"
 
     def load_credentials(self, env_file: str = os.path.expanduser("~/.claude/.env")) -> Dict[str, str]:
-        """Load credentials from .env file."""
-        credentials = {}
+        """Load credentials from .env file using python-dotenv."""
+        load_dotenv(env_file)
 
-        if os.path.exists(env_file):
-            with open(env_file, 'r') as f:
-                for line in f:
-                    line = line.strip()
-                    if '=' in line and not line.startswith('#'):
-                        key, value = line.split('=', 1)
-                        credentials[key.strip()] = value.strip()
-
-        return credentials
+        # Get credentials from environment variables
+        return {
+            'JIRA_API_TOKEN': os.getenv('JIRA_API_TOKEN'),
+            'EMAIL': os.getenv('EMAIL'),
+            'CONFLUENCE_BASE_URL': os.getenv('CONFLUENCE_BASE_URL'),
+        }
 
     def authenticate(self, token: Optional[str] = None, email: Optional[str] = None) -> bool:
         """
